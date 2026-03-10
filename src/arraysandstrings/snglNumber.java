@@ -27,15 +27,5 @@ public class snglNumber {
 
     Output: 1
      */
-    public int singleNumber(int[] nums) {
-        for (int n : nums) {
-            if (!counter.containsKey(n)){
-                counter.put(n, 1);
-            } else {
-                counter.put(n, 2);
-            }
-        }
 
-        return counter.getValue();
-    }
 }

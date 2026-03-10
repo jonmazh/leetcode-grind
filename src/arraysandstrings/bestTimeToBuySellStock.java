@@ -29,12 +29,17 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 
 public class bestTimeToBuySellStock {
     public static void main (String args[]){
-        int[] nums = new int[]{2,7, 11, 15};
+        System.out.println(maxProfit(new int[]{2,4,1}));
     }
-
-    public int maxProfit(int[] prices) {
-        //TODO SOLVE AGAIN
-        return 0;
+    // Kadane's Algorithm
+    public static int maxProfit(int[] prices) {
+        int buy = prices[0];
+        int profit = 0;
+        for (int i = 1 ; i < prices.length ; i++) {
+            buy = Math.min(buy, prices[i]);
+            profit = Math.max(prices[i]-buy, profit);
+        }
+        return profit;
     }
     /*
     [1, 2] -> min = 1

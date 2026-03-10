@@ -22,11 +22,19 @@ import java.util.List;
 
 public class validAnagram {
     public static void main (String args[]){
-        int[] nums = new int[]{2,7, 11, 15};
+        isAnagram("anagram", "nagaram");
     }
 
     public static boolean isAnagram(String s, String t) {
-        //TODO NOT SOLVED
-        return false;
+        int[] chars = new int[26];
+        if(s.length()!=t.length()){return false;}
+        for (int i=0;i<s.length();i++){
+            chars[s.charAt(i) - 'a'] += s.charAt(i);
+            chars[t.charAt(i) - 'a'] -= t.charAt(i);
+        }
+        for(int n : chars){
+            if (n!=0){return false;}
+        }
+        return true;
     }
 }
