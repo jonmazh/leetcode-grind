@@ -52,18 +52,24 @@ class LRUCache {
 
 
     public int get(int key) {
+        if(data.isEmpty()){
+            return -1;
+        }
+        if(data.get(key)==null){
+            return -1;
+        }
         return data.get(key);
     }
 
     public void put(int key, int value) {
         if(stack.size() == maxCap){
-            int least = stack.removeLast();
-            stack.addFirst(key);
+            int least = stack.pop();
+            stack.offerLast(key);
             data.remove(least);
             data.put(key, value);
         } else {
             data.put(key, value);
-            stack.addFirst(key);
+            stack.offerLast(key);
         }
 
     }
