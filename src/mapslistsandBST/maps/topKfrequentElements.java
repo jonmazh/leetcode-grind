@@ -1,4 +1,4 @@
-package mapslistsandBST;
+package mapslistsandBST.maps;
 
 import java.util.*;
 

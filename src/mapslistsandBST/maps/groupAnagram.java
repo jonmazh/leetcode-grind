@@ -1,4 +1,4 @@
-package mapslistsandBST;
+package mapslistsandBST.maps;
 
 import java.util.*;
 
@@ -38,17 +38,8 @@ public class groupAnagram {
      */
 
     public static void main (String args[]){
-        LRUCache obj = new LRUCache(2);
+        System.out.println(longestSeq.longestConsecutive(new int[]{100,4,200,1,3,2}));
 
-        obj.put(1, 1);
-        obj.put(2, 2);
-        System.out.println(obj.get(1));
-        obj.put(3, 3);
-        System.out.println((obj.get(2)));
-        obj.put(4,4);
-        System.out.println((obj.get(1)));
-        System.out.println((obj.get(3)));
-        System.out.println((obj.get(4)));
 
     }
 
